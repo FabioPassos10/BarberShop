@@ -53,7 +53,9 @@ const saveClient = () => {
       nome: document.getElementById("nome").value,
       email: document.getElementById("email").value,
       celular: document.getElementById("celular").value,
+      pagamento: document.getElementById("pagamento").value,
       horario: document.getElementById("horario").value,
+      valor: document.getElementById("valor").value,
     };
     const index = document.getElementById("nome").dataset.index;
     if (index == "new") {
@@ -74,7 +76,9 @@ const createRow = (client, index) => {
         <td>${client.nome}</td>
         <td>${client.email}</td>
         <td>${client.celular}</td>
+        <td>${client.pagamento}</td>
         <td>${client.horario}</td>
+        <td>${client.valor}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}"><i class="bi bi-pen-fill"></i></button>
             <button type="button" class="button red" id="delete-${index}" ><i class="bi bi-x-circle"></i></button>
@@ -98,11 +102,19 @@ const fillFields = (client) => {
   document.getElementById("nome").value = client.nome;
   document.getElementById("email").value = client.email;
   document.getElementById("celular").value = client.celular;
+  document.getElementById("pagamento").value = client.pagamento;
   document.getElementById("horario").value = client.horario;
+  document.getElementById("valor").value = client.valor;
   document.getElementById("nome").dataset.index = client.index;
 };
 
+// function calcular(){
+
+//   var table = $("#tableClient")
+// }
+
 const editClient = (index) => {
+  //Editar usuario
   const client = readClient()[index];
   client.index = index;
   fillFields(client);
@@ -118,7 +130,7 @@ const editDelete = (event) => {
     } else {
       const client = readClient()[index];
       const response = confirm(
-        `Deseja realmente excluir o cliente ${client.nome}`
+        `Deseja realmente excluir agendamento do cliente ${client.nome}`
       );
       if (response) {
         deleteClient(index);
