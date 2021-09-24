@@ -13,6 +13,9 @@
   opacity: 1;
   z-index: 1;
 }
+h2 {
+  color: white;
+}
 
 .modal-content {
   display: flex;

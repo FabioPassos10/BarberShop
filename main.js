@@ -78,7 +78,7 @@ const createRow = (client, index) => {
         <td>${client.celular}</td>
         <td>${client.pagamento}</td>
         <td>${client.horario}</td>
-        <td>${client.valor}</td>
+        <td class="valorCalculado">${client.valor}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}"><i class="bi bi-pen-fill"></i></button>
             <button type="button" class="button red" id="delete-${index}" ><i class="bi bi-x-circle"></i></button>
@@ -107,11 +107,6 @@ const fillFields = (client) => {
   document.getElementById("valor").value = client.valor;
   document.getElementById("nome").dataset.index = client.index;
 };
-
-// function calcular(){
-
-//   var table = $("#tableClient")
-// }
 
 const editClient = (index) => {
   //Editar usuario

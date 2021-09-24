@@ -30,6 +30,22 @@ header {
 .header-title {
   color: rgb(255, 255, 255);
   font-size: 2rem;
+  float: left;
+  padding-right: 30px;
+
+  font-weight: bold;
+
+  /* fundo gradiente */
+  background-image: linear-gradient(#ffffff, #4c9490);
+  /* agora colocamos o fundo gradiente dentro do texto com essa propriedade */
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* a cor do texto deve estar como transparent */
+  color: transparent;
+}
+
+.imglogo {
+  float: left;
 }
 
 main {
